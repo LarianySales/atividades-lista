@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programa Situação da turma</h1>
+    <hr>
+       <section>
+        <label for="nome">Nome Aluno(a):</label>
+        <input id="nome" type="text">
+    
+        <label  for="n1">1° Nota:</label>
+        <input id="nota1" type="number">
+        
+        <label for="n2">2° Nota:</label>
+        <input id="nota2" type="number">
+        
+        <button id="mediaA">Exibir média Aluno</button>
+    
+        <button id="mediaT">Exibir média da Turma</button>
+       </section>
+    
+    <script>
+    let aluno
+    
+    while(aluno != -1){
+        let est = document.getElementById('nome')
+        let n1 = document.getElementById('nota1')
+        let n2 = document.getElementById('nota2')
+    
+        const btnMa = document.getElementById('mediaA')
+    
+        btnMa.addEventListener('click', () => {
+        let est = document.getElementById('nome')
+    
+           let = mA
+           mA = (n1 + n2) / 2
+    
+           console.log(`Amédia do ${est} é igual a ${mA}`)
+    
+        })
+    }
+    </script>
+</body>
+</html>
