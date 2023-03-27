@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Programa Situação da turma</h1>
+    <hr>
+    <section>
+        <label for="nome">Nome Aluno(a):</label>
+        <input id="nome" type="text">
+
+        <label for="nota1">1° Nota:</label>
+        <input id="nota1" type="number">
+
+        <label for="nota2">2° Nota:</label>
+        <input id="nota2" type="number">
+
+        <button id="mediaA">Exibir média Aluno</button>
+
+        <button id="mediaT">Exibir média da Turma</button>
+
+        <main>
+            <p id="outSituacao"> </p>
+            <p id="outmeA"></p>
+            <p id="outMedT"></p>
+        </main>
+    </section>
+
+    <script>
+        // var meTurma = []
+        // let aluno = document.getElementById('nome')
+        // let btnIN = document.getElementById('mediaA')
+
+        // btnIN.addEventListener('click', () => {
+        //     let nota1 = document.getElementById('nota1')
+        //     let nota2 = document.getElementById('nota2')
+
+        //     let n1 = nota1.value
+        //     let n2 = nota2.value
+
+
+        //     if (n1 > 10 && n2 > 10 || n1 > 10 || nota2 > 10) {
+        //         alert("Digite notas válidas")
+        //     } else {
+        //         let inmd = document.getElementById('outmeA')
+        //         let media
+        //         media = (n1 + n2) / 2
+
+
+        //         inmd.textContent = media
+
+
+
+        //     }
+
+
+        // })
+const notasTurma = []
+
+        const inNome = document.getElementById('nome')
+        const inNota1 = document.getElementById('nota1')
+        const inNota2 = document.getElementById('nota2')
+        const outmeA = document.getElementById('outMeA')
+        const outSituacao = document.getElementById('outSituacao')
+        const mediaTurma = document.getElementById('outMedT')
+
+        const btnCalcularMedia = document.getElementById('mediaA')
+
+        btnCalcularMedia.addEventListener('click', () => {
+            let nome = inNome.value
+            let nota1 = Number(inNota1.value)
+            let nota2 = Number(inNota2.value)
+
+            if (nota1 > 10 || nota2 > 10 || isNaN(nota1) || isNaN(nota2)) {
+                alert('Digite um valor válido')
+                return
+            }
+
+            let media = (nota1 + nota2) / 2
+            console.log(media)
+            outmeA.textContent = `Média das notas ${media.toFixed(2)}`
+            if (media >= 7 && media <= 10) {
+                outSituacao.textContent = `Parabéns ${nome}! Você foi aprovado!`
+                outSituacao.style.color = 'blue'
+            } else if (media >= 3 && media < 7) {
+                outSituacao.textContent = `Atenção ${nome}! Você esta em recuperação !`
+                outSituacao.style.color = 'green'
+            } else if (media >= 0 && media < 3) {
+                outSituacao.textContent = `Ops ${nome} voc~e foi reprovado`
+                outSituacao.style.color = 'red'
+            } else {
+                outSituacao.textContent = `Digite um número válido`
+            }
+        })
+
+        const btnMediaTurma = document.getElementById('mediaT')
+        btnMediaTurma.addEventListener('click', () => {
+            let mediaTurma = 0
+            for (let i = 0; i < notasTurma.lenght; i++) {
+                mediaTurma = mediaTurma + notasTurma[i]
+            }
+            mediaTurma.textContent = `A média da turma ${(mediaTurma/notasTurma.lenght.toFixed(2))}`
+        })
+    </script>
+
+</body>
+
+</html>

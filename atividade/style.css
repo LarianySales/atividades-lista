@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.box1{justify-self: end;}
+.box1 img{width: 600px;}
+.box2{ padding-left: 1rem;}
+p{margin: 1rem 0;}
+button, input, span{padding: .1rem;}
